@@ -1,0 +1,10 @@
+.radio__container {
+  display: flex;
+}
+
+
+.radio label {
+  display: inline-block;
+  padding-right: 1rem;
+  padding-left: .25rem;
+}

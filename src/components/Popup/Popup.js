@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from '../Input/Input';
+import { RadioButtonPanel } from '../RadioButtonsPanel/RadioButtonPanel';
 import './Popup.css';
 
 export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} ) => {
@@ -7,8 +8,9 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
   const [ email, setEmail ] = useState(() => editedUser ? editedUser.email : '');
   const [ number, setNumber ] = useState(() => editedUser ? editedUser.number : '');
   const [ password, setPassword ] = useState(() => editedUser ? editedUser.password : '');
-  const [ status, setStatus ] = useState(() => editedUser ? editedUser.status : '');
+  const [ status, setStatus ] = useState(() => editedUser ? editedUser.status : 'client');
 
+  console.log(status);
   const changeNameHandler = (e) => {
     setName(e.target.value);
   };
@@ -62,7 +64,7 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
       creationDate: editedUser.creationDate,
       editionDate: new Date().toLocaleDateString()
     };
-    setUsers(users.filter(user => user.id != editedUser.id).concat(userObject));
+    setUsers(users.filter(user => user.id !== editedUser.id).concat(userObject));
     closePopup();
   }
 
@@ -101,20 +103,15 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
           </div>
           <div className="popup__item">
             <Input 
-              value={status}
-              placeholder="Статус"
-              changed={changeStatusHandler}
-              required={true}
-            />
-          </div>
-          <div className="popup__item">
-            <Input 
               value={password}
               placeholder="Пароль"
               type="password"
               changed={changePasswordHandler} 
               required={true}
             />
+          </div>
+          <div className="popup__item">
+           <RadioButtonPanel status={status} changeStatusHandler={changeStatusHandler}/>
           </div>          
           <button type="submit" className="popup__button">{editedUser ? 'Сохранить' : 'Создать'}</button>
         </form>

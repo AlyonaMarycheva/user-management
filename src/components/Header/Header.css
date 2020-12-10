@@ -1,0 +1,13 @@
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: white;
+  margin-bottom: 3rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+.header__search {
+  min-width: 30%;
+  margin-right: 3rem; 
+}

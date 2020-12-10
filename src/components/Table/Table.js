@@ -15,10 +15,10 @@ export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
   }
 
   return (
-    <div className="table-container">
+    <div className="table__container">
     
-     <header className="header">Пользователи</header>
-      <table className="users">
+     <header className="table__header">Пользователи</header>
+      <table className="table__body">
       <thead>
           <tr>
             <th>ФИО</th>
@@ -43,10 +43,10 @@ export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
                 <div>отредактировано: {user.editionDate}</div>
             </td>
             <td>
-            <button className="svg-button" onClick={(e) => editUser(user, e)}>
+            <button className="table__button" onClick={(e) => editUser(user, e)}>
                 <BiPencil size='1.5rem' className="svg"/>
               </button>
-              <button className="svg-button" onClick={(e) => deleteUser(user, e)}>
+              <button className="table__button" onClick={(e) => deleteUser(user, e)}>
                 <AiFillDelete size='1.5rem' className="svg"/>
               </button>
             </td>
