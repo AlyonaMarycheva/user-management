@@ -1,0 +1,56 @@
+.table-container {
+  min-height: 50rem;
+  padding: 3rem;
+  background-color: #ffffff;
+  border-radius: 2.5rem;
+}
+
+.header {
+  font-size: 2rem;
+}
+
+.users {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.users tr {
+  height: 3rem;
+}
+
+.users th {
+  text-transform: uppercase;
+  color:  #8076a3;
+  text-align: left;
+  font-size: 1.2rem;
+}
+
+.users tbody tr:nth-child(odd) {
+  background-color: #f7f7fc;
+}
+
+.dates {
+  font-size: 1rem;
+}
+
+.users td, 
+.users th {
+  padding: 1.5rem;
+}
+
+.svg-button {
+  border:none;
+  background: none;
+  width: 2rem;
+}
+.svg-button:focus { 
+  outline: none; 
+}
+
+.svg {
+  color: #7e7f81;
+}
+
+.svg:hover {
+  color: #44484d;
+}
