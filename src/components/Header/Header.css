@@ -6,6 +6,17 @@
   background-color: white;
   margin-bottom: 3rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+
+ 
+}
+
+@media (max-width: 1200px) {
+  .header__container { 
+    width: 120rem;
+    justify-content: flex-start;
+  }
 }
 .header__search {
   min-width: 30%;

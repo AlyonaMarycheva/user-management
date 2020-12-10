@@ -1,6 +1,6 @@
 
 .popup__backdrop {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   position: fixed;
   top: 0;
@@ -19,6 +19,13 @@
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 4rem;
+}
+
+@media (max-width: 900px) {
+  .popup {
+    width: 90%;
+    padding: 2rem;
+  }
 }
 
 .popup__content {

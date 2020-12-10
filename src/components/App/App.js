@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
-import { FloatingButton } from '../FloatingButton/FloatingButton';
 import { Table } from '../Table/Table';
 import { Popup } from '../Popup/Popup';
 import { Header } from '../Header/Header';
@@ -20,7 +18,6 @@ export const App = () => {
   });
 
   const [filteredUser, setFilteredUsers] = useState(users);
-  const openPopup = () => setPopupIsOpen(true);
 
   const changeFilterStatusHandler = (e) => {
     setFilterStatus(e.target.value);
@@ -55,7 +52,6 @@ export const App = () => {
         status={filterStatus} 
         changeStatusHandler={changeFilterStatusHandler}
       />
-      <FloatingButton onClick={openPopup}/>
       {popupIsOpen ? <Popup users={users} setEditedUser={setEditedUser} editedUser={editedUser} setUsers={setUsers} setIsOpen={setPopupIsOpen}/> : null}
     </div>
   );

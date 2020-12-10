@@ -10,7 +10,6 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
   const [ password, setPassword ] = useState(() => editedUser ? editedUser.password : '');
   const [ status, setStatus ] = useState(() => editedUser ? editedUser.status : 'client');
 
-  console.log(status);
   const changeNameHandler = (e) => {
     setName(e.target.value);
   };
@@ -45,8 +44,7 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
       number,
       password,
       status,
-      creationDate: new Date().toLocaleDateString(),
-      editionDate: new Date().toLocaleDateString()
+      creationDate: new Date().toLocaleDateString()
     };
     setUsers(users.concat(userObject));
     closePopup();
@@ -81,6 +79,8 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
               value={name}
               placeholder="ФИО"
               changed={changeNameHandler} 
+              type="tel"
+              pattern="[А-Яа-я]*?\s[А-Яа-я]*?\s[А-Яа-я]*"
               required={true}
             />
           </div>
@@ -97,6 +97,8 @@ export const Popup = ( {users, setUsers, setIsOpen, editedUser, setEditedUser} )
             <Input 
               value={number}
               placeholder='Номер телефона'
+              type="tel"
+              pattern="8[0-9]{10}"
               changed={changeNumberHandler} 
               required={true}
             />

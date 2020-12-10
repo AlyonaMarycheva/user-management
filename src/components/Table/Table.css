@@ -2,8 +2,9 @@
   min-height: 50rem;
   padding: 3rem;
   background-color: #ffffff;
-  max-width: 112rem;
+  width: 120rem;
   margin: 0 auto;
+  position: relative;
   box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
 }
 
@@ -11,23 +12,23 @@
   font-size: 2rem;
 }
 
-.table__body {
+.table__content {
   border-collapse: collapse;
   width: 100%;
 }
 
-.table__body tr {
+.table__content tr {
   height: 3rem;
 }
 
-.table__body th {
+.table__content th {
   text-transform: uppercase;
   color:  #8076a3;
   text-align: left;
   font-size: 1.2rem;
 }
 
-.table__body tbody tr:nth-child(odd) {
+.table__content tbody tr:nth-child(odd) {
   background-color: #f7f7fc;
 }
 
@@ -35,8 +36,8 @@
   font-size: 1rem;
 }
 
-.table__body td, 
-.table__body th {
+.table__content td, 
+.table__content th {
   padding: 1.5rem;
 }
 

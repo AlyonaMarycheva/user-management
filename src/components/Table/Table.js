@@ -1,13 +1,14 @@
 import './Table.css';
+import { FloatingButton } from '../FloatingButton/FloatingButton';
 import { AiFillDelete } from 'react-icons/ai';
 import { BiPencil } from 'react-icons/bi';
 
 export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
-
   const deleteUser = (deletedUser) => {
     const redusedArray = users.filter(user => user!==deletedUser);
     setUsers(redusedArray);
   }
+  const openPopup = () => setIsOpen(true);
 
   const editUser = (user) => {
     setEditedUser(user);
@@ -16,9 +17,8 @@ export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
 
   return (
     <div className="table__container">
-    
      <header className="table__header">Пользователи</header>
-      <table className="table__body">
+      <table className="table__content">
       <thead>
           <tr>
             <th>ФИО</th>
@@ -40,7 +40,7 @@ export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
             <td>{user.status}</td>
             <td className="dates">
                 <div>создано: {user.creationDate} </div>
-                <div>отредактировано: {user.editionDate}</div>
+                {user.editionDate ? <div>отредактировано: {user.editionDate}</div> : null}
             </td>
             <td>
             <button className="table__button" onClick={(e) => editUser(user, e)}>
@@ -53,6 +53,7 @@ export const Table = ({users, setUsers, setEditedUser, setIsOpen}) => {
           </tr>)}
         </tbody>
       </table>
+      <FloatingButton onClick={openPopup}/>
     </div>
   );
 }
